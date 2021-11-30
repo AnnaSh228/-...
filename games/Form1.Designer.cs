@@ -32,15 +32,16 @@ namespace games
             this.components = new System.ComponentModel.Container();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtLog = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.SuspendLayout();
             // 
             // pbMain
             // 
-            this.pbMain.Location = new System.Drawing.Point(14, 16);
+            this.pbMain.Location = new System.Drawing.Point(5, 13);
             this.pbMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(669, 429);
+            this.pbMain.Size = new System.Drawing.Size(815, 555);
             this.pbMain.TabIndex = 0;
             this.pbMain.TabStop = false;
             this.pbMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMain_Paint);
@@ -52,11 +53,20 @@ namespace games
             this.timer1.Interval = 30;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(601, 29);
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(205, 521);
+            this.txtLog.TabIndex = 1;
+            this.txtLog.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 481);
+            this.ClientSize = new System.Drawing.Size(838, 562);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.pbMain);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
@@ -70,6 +80,7 @@ namespace games
 
         private System.Windows.Forms.PictureBox pbMain;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.RichTextBox txtLog;
     }
 }
 
