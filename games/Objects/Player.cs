@@ -8,6 +8,7 @@ namespace games.Objects
 {
     class Player : BaseObject
     {
+        public Action <Marker> OnMarkerOverlap;
         public Player(float x,float y,float angle) : base(x, y, angle)
         {
 
@@ -24,6 +25,13 @@ namespace games.Objects
             path.AddEllipse(-15,-15,30,30);
             return path;
         }
-
+        public override void Overlap(BaseObject obj)
+        {
+            base.Overlap(obj);
+            if (obj is Marker)
+            {
+                OnMarkerOverlap(obj as Marker);
+            }
+        }
     }
 }

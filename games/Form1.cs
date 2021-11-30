@@ -26,6 +26,11 @@ namespace games
             {
                 txtLog.Text = $"[{DateTime.Now:HH:mm:ss:ff}] Игрок пересекся с {obj}\n" + txtLog.Text;
             };
+            player.OnMarkerOverlap += (m) =>
+            {
+                objects.Remove(m);
+                marker = null;
+            };
             objects.Add(player);
             objects.Add(new MyRectangle(50, 50, 0));
             objects.Add(new MyRectangle(100, 100, 45));
@@ -43,20 +48,19 @@ namespace games
             {
                 if (obj != player && player.Overlaps(obj, g))
                 {
-                    player.Overlap(obj); 
-                    obj.Overlap(player); 
-                    if (obj == marker)
-                    {
-                        
-                        objects.Remove(marker);
-                        marker = null; 
-                    }
+                    player.Overlap(obj);
+                    obj.Overlap(player);
+
                 }
-                g.Transform = obj.GetTransform();
-                obj.Render(g);
+            }
+                foreach (var obj in objects)
+                {
+                    g.Transform = obj.GetTransform();
+                    obj.Render(g);
+                }
             }
 
-        }
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
