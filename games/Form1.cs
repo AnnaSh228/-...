@@ -56,5 +56,11 @@ namespace games
             player.Y += dy * 2;
             pbMain.Invalidate();
         }
+
+        private void pbMain_MouseClick(object sender, MouseEventArgs e)
+        {
+            marker.X = e.X;
+            marker.Y = e.Y;
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace games
             this.pbMain.TabIndex = 0;
             this.pbMain.TabStop = false;
             this.pbMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMain_Paint);
+            this.pbMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbMain_MouseClick);
             // 
             // timer1
             // 
