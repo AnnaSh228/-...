@@ -16,6 +16,7 @@ namespace games
         MyRectangle myRect;
         List<BaseObject> objects= new List<BaseObject>();
         Player player;
+        Marker marker;
         public Form1()
         {
             InitializeComponent();
